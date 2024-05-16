@@ -63,7 +63,10 @@ async function showForecast(url) {
                 let time = new Date(feature.properties.timeseries[i].time);
                 content += `<img src="icons/svg/${symbol}.svg" alt="${symbol}" style="width:32px" title="${time.toLocaleString()}">`;
             }
-
+            //Link
+            content += `
+              <p><a href="${url}" target="met.no">Daten downloaden</a></p>
+            `
             L.popup(latlng, {
                 content: content
             }).openOn(themaLayer.forecast);
